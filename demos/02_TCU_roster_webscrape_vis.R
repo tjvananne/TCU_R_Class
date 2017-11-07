@@ -28,8 +28,8 @@ roster_df  <- html_table(table_html)
 
 
 
-    # If the above code fails, then uncomment this line of code and run it
-    # roster_df <- readRDS('data/roster_df.rds') 
+# If the above code fails, then uncomment this line of code and run it
+# roster_df <- readRDS('data/roster_df.rds') 
 
 
 # Now let's inspect the data and build some visualizations
@@ -47,8 +47,11 @@ names(roster_df) <- gsub(pattern = "\\.", replacement = "", x = tolower(names(ro
 names(roster_df)
 
 
+
 # color palette -- google "hex color picker":
 col1 <- "#4542f4"
+
+
 
 
 # histogram of weight -- 30 bins
@@ -59,12 +62,15 @@ ggplot(data=roster_df, aes(x=wt)) +
     theme_bw(base_size=16)
 
 
-    # histogram of weight -- 20 bins
-    ggplot(data=roster_df, aes(x=wt)) +
-        geom_histogram(fill=col1, alpha=0.7, bins=20) +
-        ggtitle("Histogram of Player Weight -- bins=20") +
-        xlab("Weight") + ylab("Count of Players in This Bin") +
-        theme_bw(base_size=16)
+
+
+# histogram of weight -- 20 bins
+ggplot(data=roster_df, aes(x=wt)) +
+    geom_histogram(fill=col1, alpha=0.7, bins=20) +
+    ggtitle("Histogram of Player Weight -- bins=20") +
+    xlab("Weight") + ylab("Count of Players in This Bin") +
+    theme_bw(base_size=16)
+
 
 
 
@@ -80,9 +86,11 @@ ggplot(data=roster_df, aes(x=height, y=wt)) +
 
 
 
+
 # box plot of player weight by classification
 table(roster_df$class)
 roster_df$class <- factor(roster_df$class, levels=c("RS FR", "FR", "SO", "JR", "SR"))
+
 ggplot(data=roster_df, aes(x=class, y=wt)) +
     geom_boxplot(fill=col1, alpha=0.6) +
     theme_bw(base_size=16) +
@@ -92,10 +100,12 @@ ggplot(data=roster_df, aes(x=class, y=wt)) +
 
 
 
+
 # rbokeh -- interactive height / weight javascript visualizations
 figure(width=600, height=600) %>%
     ly_points(data=roster_df, x=height, y=wt,
-    color = class, glyph = class, hover = list(name, hometown))
+              color = class, glyph = class, hover = list(name, hometown))
+
 
 
 # dplyr to group/summarise data
@@ -115,6 +125,10 @@ all_area_spread$height <- NULL
 
 plot_ly(z = as.matrix(all_area_spread)) %>% add_surface()
 
+
+
+
+# a more proper way to use the 3d surface plot
 dim(volcano)
 plot_ly(z = ~volcano) %>% add_surface()
 

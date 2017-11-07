@@ -12,10 +12,10 @@ Hello TCU students! This repository will be the home to all the materials we wil
 
 It is not feasible to learn R in only an hour or two of a classroom setting. If you are interested in learning more about R, then feel free to check out these free resources:
 
-* [R for Data Science](http://r4ds.had.co.nz/)
-* [Text Mining with R](http://tidytextmining.com/)
 * [Data camp - some content might not be free](https://www.datacamp.com/onboarding/learn?from=home&technology=r)
 * [Data Science track in Coursera (this is how I started - you'll have to audit courses for free access)](https://www.coursera.org/specializations/jhu-data-science)
+* [R for Data Science](http://r4ds.had.co.nz/)
+* [Text Mining with R](http://tidytextmining.com/)
 * [Github](https://github.com/trending/r) - I made this link to the "top trending R repositories" - it's always good to see what people are working on
 * [Kaggle](https://www.kaggle.com/) - data science competition website. This is a great community for learning the basics as well as discovering new strategies for taking on unique problems. **reading other peoples' scripts on this site is one of the best ways to improve your skills.**
 
