@@ -427,7 +427,9 @@ xgbcv <- xgboost::xgb.cv(
 
     # cache
     saveRDS(xgbcv, '../cache/xgbcv.rds')
-
+    xgbcv <- readRDS('../cache/xgbcv.rds')
+    
+    
 best_nrounds <- which.max(xgbcv$evaluation_log$test_auc_mean)
 
 
@@ -439,7 +441,7 @@ xgbmod <- xgboost::xgboost(
 
     # cache
     saveRDS(xgbmod, '../cache/xgbmod.rds')
-
+    xgbmod <- readRDS('../cache/xgbmod.rds')
 
 # probability predictions
 xgb_preds <- predict(xgbmod, dmat_holdout)
